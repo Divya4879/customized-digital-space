@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya's Ultimate Digital Workspace | DevFlow Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="pink" data-mode="light">
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+            
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link active" role="menuitem" aria-current="page">
+                        <span class="nav-icon" aria-hidden="true">🏠</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">👥</span>
+                        Team Directory
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">📅</span>
+                        Calendar
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">📁</span>
+                        Projects
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">💬</span>
+                        Messages
+                        <span class="notification-badge" aria-label="23 unread messages">23</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">📊</span>
+                        Analytics
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link" role="menuitem">
+                        <span class="nav-icon" aria-hidden="true">⚙️</span>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" role="main">
+            <!-- Header -->
+            <header class="header" role="banner">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation menu">☰</button>
+                
+                <div class="header-brand">
+                    <h1 class="brand-title">AetherDesk</h1>
+                    <p class="brand-subtitle">All‑In‑One Space, Tailored Just for You</p>
+                </div>
+                
+                <div class="search-bar">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="text" class="search-input" placeholder="What are you looking for?" aria-label="Search">
+                </div>
+                
+                <div class="header-actions">
+                    <div class="theme-selector">
+                        <button class="theme-toggle" onclick="toggleThemeDropdown()" id="themeToggle" aria-label="Theme settings" aria-expanded="false" aria-haspopup="true">🎨</button>
+                        <div class="theme-dropdown" id="themeDropdown" role="menu" aria-labelledby="themeToggle">
+                            <div class="theme-options" role="group" aria-label="Color themes">
+                                <button class="theme-option pink active" onclick="setTheme('pink')" role="menuitem" aria-label="Pink theme" tabindex="0"></button>
+                                <button class="theme-option blue" onclick="setTheme('blue')" role="menuitem" aria-label="Blue theme" tabindex="-1"></button>
+                                <button class="theme-option green" onclick="setTheme('green')" role="menuitem" aria-label="Green theme" tabindex="-1"></button>
+                                <button class="theme-option purple" onclick="setTheme('purple')" role="menuitem" aria-label="Purple theme" tabindex="-1"></button>
+                                
+                            </div>
+                            <div class="mode-toggle" role="group" aria-label="Display mode">
+                                <button class="mode-btn active" onclick="setMode('light')" role="menuitem" aria-pressed="true">☀️ Light</button>
+                                <button class="mode-btn" onclick="setMode('dark')" role="menuitem" aria-pressed="false">🌙 Dark</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-profile" tabindex="0" role="button" aria-label="User profile">
+                        <div class="user-avatar" aria-hidden="true">D</div>
+                        <div class="user-info">
+                            <h3>Divya</h3>
+                            <p>Web Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Mode Tabs -->
+            <div class="mode-tabs" role="tablist" aria-label="Workspace modes">
+                <button class="mode-tab active" onclick="switchMode('dashboard')" role="tab" aria-selected="true" aria-controls="dashboard-mode" id="dashboard-tab">
+                    🏠 Dashboard
+                </button>
+                <button class="mode-tab" onclick="switchMode('focus')" role="tab" aria-selected="false" aria-controls="focus-mode" id="focus-tab">
+                    🎯 Focus Mode
+                </button>
+                <button class="mode-tab" onclick="switchMode('learning')" role="tab" aria-selected="false" aria-controls="learning-mode" id="learning-tab">
+                    📚 Learning Mode
+                </button>
+                <button class="mode-tab" onclick="switchMode('play')" role="tab" aria-selected="false" aria-controls="play-mode" id="play-tab">
+                    🎮 Play Mode
+                </button>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <!-- Original Dashboard -->
+                <div class="mode-content active" id="dashboard-mode" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <!-- Welcome Section -->
+                    <section class="welcome-section fade-in" aria-labelledby="welcome-title">
+                        <div class="welcome-content">
+                            <h1 class="welcome-title" id="welcome-title">Good morning, Divya! ✨</h1>
+                            <p class="welcome-subtitle">Ready to code something amazing today? Your creativity knows no bounds.</p>
+                            <p class="welcome-time" id="currentDateTime" aria-live="polite"></p>
+                        </div>
+                    </section>
+
+                    <!-- Widget Grid -->
+                    <div class="widget-grid">
+                        <!-- Quick Actions Widget -->
+                        <section class="widget slide-in" aria-labelledby="quick-actions-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="quick-actions-title">
+                                    <span class="widget-icon" aria-hidden="true">⚡</span>
+                                    Quick Actions
+                                </h2>
+                            </div>
+                            <div class="quick-actions">
+                                <a href="#" class="action-btn" aria-label="Create new project">
+                                    <span class="action-icon" aria-hidden="true">💻</span>
+                                    <span>New Project</span>
+                                </a>
+                                <a href="#" class="action-btn" aria-label="Start code review">
+                                    <span class="action-icon" aria-hidden="true">📝</span>
+                                    <span>Code Review</span>
+                                </a>
+                                <a href="#" class="action-btn" aria-label="Deploy application">
+                                    <span class="action-icon" aria-hidden="true">🚀</span>
+                                    <span>Deploy</span>
+                                </a>
+                                <a href="#" class="action-btn" aria-label="View analytics">
+                                    <span class="action-icon" aria-hidden="true">📊</span>
+                                    <span>Analytics</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <!-- Enhanced Messages Widget -->
+                        <section class="widget slide-in" aria-labelledby="messages-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="messages-title">
+                                    <span class="widget-icon" aria-hidden="true">💬</span>
+                                    Recent Messages
+                                    <span class="message-badge">23</span>
+                                </h2>
+                            </div>
+                            <div class="messages-widget">
+                                <div class="message-item unread">
+                                    <div class="message-avatar">A</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Alex Chen</span>
+                                            <span class="message-time">2m ago</span>
+                                        </div>
+                                        <div class="message-preview">Hey! Can you review the new React component I just pushed?</div>
+                                    </div>
+                                </div>
+                                <div class="message-item unread">
+                                    <div class="message-avatar">S</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Sarah Johnson</span>
+                                            <span class="message-time">5m ago</span>
+                                        </div>
+                                        <div class="message-preview">The API endpoint is ready for testing. Let me know if you need anything!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item unread">
+                                    <div class="message-avatar">M</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Mike Rodriguez</span>
+                                            <span class="message-time">8m ago</span>
+                                        </div>
+                                        <div class="message-preview">Great job on the performance optimization! 40% improvement is amazing.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">E</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Emma Wilson</span>
+                                            <span class="message-time">15m ago</span>
+                                        </div>
+                                        <div class="message-preview">Database migration completed successfully. All tests passing!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">J</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Jake Thompson</span>
+                                            <span class="message-time">22m ago</span>
+                                        </div>
+                                        <div class="message-preview">Welcome to the team! Looking forward to working with you.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">L</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Lisa Rodriguez</span>
+                                            <span class="message-time">35m ago</span>
+                                        </div>
+                                        <div class="message-preview">Thanks for the onboarding session! Very helpful.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">D</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">David Kim</span>
+                                            <span class="message-time">1h ago</span>
+                                        </div>
+                                        <div class="message-preview">The new design system looks fantastic! Can't wait to implement it.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">R</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Rachel Green</span>
+                                            <span class="message-time">1h ago</span>
+                                        </div>
+                                        <div class="message-preview">Code review completed. Everything looks good to merge!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">T</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Tom Wilson</span>
+                                            <span class="message-time">2h ago</span>
+                                        </div>
+                                        <div class="message-preview">Deployment to staging successful. Ready for production?</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">N</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Nina Patel</span>
+                                            <span class="message-time">2h ago</span>
+                                        </div>
+                                        <div class="message-preview">Bug fix for the login issue is ready for testing.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">C</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Chris Lee</span>
+                                            <span class="message-time">3h ago</span>
+                                        </div>
+                                        <div class="message-preview">New feature branch created. Starting work on user dashboard v3.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">K</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Kevin Zhang</span>
+                                            <span class="message-time">3h ago</span>
+                                        </div>
+                                        <div class="message-preview">API documentation updated with new endpoints. Check it out!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">B</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Ben Taylor</span>
+                                            <span class="message-time">4h ago</span>
+                                        </div>
+                                        <div class="message-preview">Security audit completed. All vulnerabilities addressed.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">H</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Hannah Davis</span>
+                                            <span class="message-time">4h ago</span>
+                                        </div>
+                                        <div class="message-preview">Mobile app performance improved by 25%. Great work team!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">P</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Paul Martinez</span>
+                                            <span class="message-time">5h ago</span>
+                                        </div>
+                                        <div class="message-preview">Docker containers optimized. Build time reduced by 30%.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">G</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Grace Liu</span>
+                                            <span class="message-time">6h ago</span>
+                                        </div>
+                                        <div class="message-preview">Unit tests coverage increased to 95%. Almost there!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">V</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Victor Chen</span>
+                                            <span class="message-time">6h ago</span>
+                                        </div>
+                                        <div class="message-preview">New CI/CD pipeline is working perfectly. Automated deployments!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">Z</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Zoe Adams</span>
+                                            <span class="message-time">7h ago</span>
+                                        </div>
+                                        <div class="message-preview">Frontend components library updated with new accessibility features.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">I</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Ian Foster</span>
+                                            <span class="message-time">8h ago</span>
+                                        </div>
+                                        <div class="message-preview">Database backup completed successfully. All data secure.</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">O</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Olivia Brown</span>
+                                            <span class="message-time">9h ago</span>
+                                        </div>
+                                        <div class="message-preview">User feedback analysis complete. Great insights for next sprint!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">Q</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Quinn Roberts</span>
+                                            <span class="message-time">10h ago</span>
+                                        </div>
+                                        <div class="message-preview">Load testing completed. System handles 10x traffic perfectly!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">U</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Uma Singh</span>
+                                            <span class="message-time">11h ago</span>
+                                        </div>
+                                        <div class="message-preview">Microservices architecture migration 80% complete. On track!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">W</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Will Johnson</span>
+                                            <span class="message-time">12h ago</span>
+                                        </div>
+                                        <div class="message-preview">GraphQL API endpoints optimized. Query performance improved!</div>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">Y</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-sender">Yuki Tanaka</span>
+                                            <span class="message-time">Yesterday</span>
+                                        </div>
+                                        <div class="message-preview">Internationalization support added. App now supports 12 languages!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Most Productive Employee Widget -->
+                        <section class="widget slide-in" aria-labelledby="productive-employee-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="productive-employee-title">
+                                    <span class="widget-icon" aria-hidden="true">🏆</span>
+                                    Most Productive This Month
+                                </h2>
+                            </div>
+                            <div class="team-member" style="background: var(--gradient-light); border: 2px solid var(--primary);">
+                                <div class="member-avatar" style="background: linear-gradient(135deg, #ffd700, #ffb300);">S</div>
+                                <div class="member-info">
+                                    <h4>Sarah Chen</h4>
+                                    <p>🎉 150 commits, 25 PRs merged, 5 features shipped!</p>
+                                    <p style="color: var(--primary); font-weight: 600; margin-top: 0.5rem;">Outstanding performance this month! 🌟</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Welcome New Hires Widget -->
+                        <section class="widget slide-in" aria-labelledby="new-hires-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="new-hires-title">
+                                    <span class="widget-icon" aria-hidden="true">👋</span>
+                                    Welcome New Hires
+                                </h2>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">J</div>
+                                <div class="member-info">
+                                    <h4>Jake Thompson</h4>
+                                    <p>Frontend Developer - Started this week! 🎉</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">L</div>
+                                <div class="member-info">
+                                    <h4>Lisa Rodriguez</h4>
+                                    <p>Full Stack Developer - Joined our team Monday!</p>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: var(--gradient-light); border-radius: 8px;">
+                                <p style="color: var(--primary); font-weight: 600;">Let's give them a warm welcome! 🤗</p>
+                            </div>
+                        </section>
+
+                        <!-- Team Spotlight Widget -->
+                        <section class="widget slide-in" aria-labelledby="team-spotlight-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="team-spotlight-title">
+                                    <span class="widget-icon" aria-hidden="true">⭐</span>
+                                    Team Spotlight
+                                </h2>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">A</div>
+                                <div class="member-info">
+                                    <h4>Alex Chen</h4>
+                                    <p>Shipped the new React component library! 🎉</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">M</div>
+                                <div class="member-info">
+                                    <h4>Mike Rodriguez</h4>
+                                    <p>Fixed critical security vulnerability</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">E</div>
+                                <div class="member-info">
+                                    <h4>Emma Wilson</h4>
+                                    <p>Optimized database queries by 60%</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Upcoming Events Widget -->
+                        <section class="widget slide-in" aria-labelledby="upcoming-events-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="upcoming-events-title">
+                                    <span class="widget-icon" aria-hidden="true">📅</span>
+                                    Upcoming Events
+                                </h2>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="day">15</div>
+                                    <div class="month">JUL</div>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Tech Talk: React 19</h4>
+                                    <p>2:00 PM - Conference Room A</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="day">18</div>
+                                    <div class="month">JUL</div>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Code Review Session</h4>
+                                    <p>10:00 AM - Virtual Meeting</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="day">22</div>
+                                    <div class="month">AUG</div>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Hackathon Weekend</h4>
+                                    <p>9:00 AM - Innovation Lab</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Dev Announcements Widget -->
+                        <section class="widget slide-in" aria-labelledby="dev-announcements-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="dev-announcements-title">
+                                    <span class="widget-icon" aria-hidden="true">📢</span>
+                                    Dev Announcements
+                                </h2>
+                            </div>
+                            <div>
+                                <div style="padding: 1rem; background: var(--gradient-light); border-radius: 8px; margin-bottom: 1rem;">
+                                    <h4 style="margin-bottom: 0.5rem;">🚀 New CI/CD Pipeline</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Automated deployment pipeline is now live for all projects!</p>
+                                </div>
+                                <div style="padding: 1rem; background: var(--gradient-light); border-radius: 8px; margin-bottom: 1rem;">
+                                    <h4 style="margin-bottom: 0.5rem;">💡 Code Challenge</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Monthly coding challenge starts tomorrow. Prize: $500!</p>
+                                </div>
+                                <div style="padding: 1rem; background: var(--gradient-light); border-radius: 8px;">
+                                    <h4 style="margin-bottom: 0.5rem;">🛠️ New Dev Tools</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Updated development environment with latest tools available!</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Weather Widget -->
+                        <section class="widget slide-in" aria-labelledby="weather-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="weather-title">
+                                    <span class="widget-icon" aria-hidden="true">🌤️</span>
+                                    Today's Weather
+                                </h2>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 4rem; margin-bottom: 1rem;" aria-hidden="true">☀️</div>
+                                <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">75°F</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Perfect coding weather!</p>
+                                <div style="display: flex; justify-content: space-between; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                                    <div>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">High</p>
+                                        <p style="font-weight: 600;">82°F</p>
+                                    </div>
+                                    <div>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Low</p>
+                                        <p style="font-weight: 600;">68°F</p>
+                                    </div>
+                                    <div>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Humidity</p>
+                                        <p style="font-weight: 600;">45%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Recent Projects Widget -->
+                        <section class="widget slide-in" aria-labelledby="recent-projects-title">
+                            <div class="widget-header">
+                                <h2 class="widget-title" id="recent-projects-title">
+                                    <span class="widget-icon" aria-hidden="true">💻</span>
+                                    Recent Projects
+                                </h2>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--gradient-light)'" onmouseout="this.style.background='var(--bg-secondary)'" tabindex="0" role="button" aria-label="E-commerce Dashboard project">
+                                    <span style="margin-right: 1rem; font-size: 1.2rem;" aria-hidden="true">⚛️</span>
+                                    <div>
+                                        <h4 style="font-size: 0.9rem; margin-bottom: 0.2rem;">E-commerce Dashboard</h4>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">React + TypeScript</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--gradient-light)'" onmouseout="this.style.background='var(--bg-secondary)'" tabindex="0" role="button" aria-label="API Gateway Service project">
+                                    <span style="margin-right: 1rem; font-size: 1.2rem;" aria-hidden="true">🚀</span>
+                                    <div>
+                                        <h4 style="font-size: 0.9rem; margin-bottom: 0.2rem;">API Gateway Service</h4>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Node.js + Express</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--gradient-light)'" onmouseout="this.style.background='var(--bg-secondary)'" tabindex="0" role="button" aria-label="Mobile App UI Kit project">
+                                    <span style="margin-right: 1rem; font-size: 1.2rem;" aria-hidden="true">📱</span>
+                                    <div>
+                                        <h4 style="font-size: 0.9rem; margin-bottom: 0.2rem;">Mobile App UI Kit</h4>
+                                        <p style="font-size: 0.8rem; color: var(--text-secondary);">React Native</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Development Stats -->
+                    <section class="widget fade-in" style="margin-bottom: 2rem;" aria-labelledby="dev-metrics-title">
+                        <div class="widget-header">
+                            <h2 class="widget-title" id="dev-metrics-title">
+                                <span class="widget-icon" aria-hidden="true">📈</span>
+                                Development Metrics
+                            </h2>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value">47</div>
+                                <div class="stat-label">Active Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">1,247</div>
+                                <div class="stat-label">Commits This Month</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">23</div>
+                                <div class="stat-label">Code Reviews</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">98.5%</div>
+                                <div class="stat-label">Uptime</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Focus Mode -->
+                <div class="mode-content" id="focus-mode" role="tabpanel" aria-labelledby="focus-tab">
+                    <!-- Stats Overview -->
+                    <div class="stats-grid fade-in" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">📊</div>
+                            </div>
+                            <div class="stat-value">87%</div>
+                            <div class="stat-label">Productivity Score</div>
+                            <div class="stat-change positive">+5% from yesterday</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">⏰</div>
+                            </div>
+                            <div class="stat-value">6.5h</div>
+                            <div class="stat-label">Focus Time Today</div>
+                            <div class="stat-change positive">+1.2h from average</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">✅</div>
+                            </div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Tasks Completed</div>
+                            <div class="stat-change positive">+3 from yesterday</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">👥</div>
+                            </div>
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Team Collaborations</div>
+                            <div class="stat-change positive">+2 new interactions</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">📅</div>
+                            </div>
+                            <div class="stat-value">3/5</div>
+                            <div class="stat-label">Meetings Completed</div>
+                            <div class="stat-change">2 remaining today</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" aria-hidden="true">🚀</div>
+                            </div>
+                            <div class="stat-value">4/7</div>
+                            <div class="stat-label">Projects Status</div>
+                            <div class="stat-change">3 ongoing, 2 due soon</div>
+                        </div>
+                    </div>
+
+                    <!-- Launch Pad -->
+                    <section class="launch-pad slide-in" aria-labelledby="launch-pad-title">
+                        <div class="launch-pad-header">
+                            <h2 class="launch-pad-title" id="launch-pad-title">Developer Launch Pad</h2>
+                            <p class="launch-pad-subtitle">Quick access to your essential development tools</p>
+                        </div>
+                        <div class="launch-grid">
+                            <a href="https://github.com" target="_blank" class="launch-item" aria-label="Open GitHub">
+                                <div class="launch-icon" aria-hidden="true">🐙</div>
+                                <div class="launch-name">GitHub</div>
+                                <div class="launch-description">Version control & collaboration</div>
+                            </a>
+                            <a href="https://code.visualstudio.com" target="_blank" class="launch-item" aria-label="Open VS Code">
+                                <div class="launch-icon" aria-hidden="true">💻</div>
+                                <div class="launch-name">VS Code</div>
+                                <div class="launch-description">Code editor & IDE</div>
+                            </a>
+                            <a href="https://codesandbox.io" target="_blank" class="launch-item" aria-label="Open CodeSandbox">
+                                <div class="launch-icon" aria-hidden="true">📦</div>
+                                <div class="launch-name">CodeSandbox</div>
+                                <div class="launch-description">Online code editor</div>
+                            </a>
+                            <a href="https://replit.com" target="_blank" class="launch-item" aria-label="Open Replit">
+                                <div class="launch-icon" aria-hidden="true">🔧</div>
+                                <div class="launch-name">Replit</div>
+                                <div class="launch-description">Collaborative coding</div>
+                            </a>
+                            <a href="https://figma.com" target="_blank" class="launch-item" aria-label="Open Figma">
+                                <div class="launch-icon" aria-hidden="true">🎨</div>
+                                <div class="launch-name">Figma</div>
+                                <div class="launch-description">Design & prototyping</div>
+                            </a>
+                            <a href="https://vercel.com" target="_blank" class="launch-item" aria-label="Open Vercel">
+                                <div class="launch-icon" aria-hidden="true">▲</div>
+                                <div class="launch-name">Vercel</div>
+                                <div class="launch-description">Deployment platform</div>
+                            </a>
+                            <a href="https://netlify.com" target="_blank" class="launch-item" aria-label="Open Netlify">
+                                <div class="launch-icon" aria-hidden="true">🌐</div>
+                                <div class="launch-name">Netlify</div>
+                                <div class="launch-description">Web hosting & CI/CD</div>
+                            </a>
+                            <a href="https://stackoverflow.com" target="_blank" class="launch-item" aria-label="Open Stack Overflow">
+                                <div class="launch-icon" aria-hidden="true">📚</div>
+                                <div class="launch-name">Stack Overflow</div>
+                                <div class="launch-description">Developer Q&A</div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Focus Section -->
+                    <section class="focus-section slide-in" aria-labelledby="focus-question">
+                        <div class="focus-header">
+                            <h2 class="focus-question" id="focus-question">What's your primary focus today, Divya?</h2>
+                            <input type="text" class="focus-input" placeholder="Enter your most important coding task for today..." id="focusInput" aria-label="Daily focus task">
+                        </div>
+                        
+                        <!-- Pomodoro Timer -->
+                        <div class="pomodoro-timer" role="region" aria-labelledby="timer-title">
+                            <h3 id="timer-title" class="sr-only">Pomodoro Timer</h3>
+                            <div class="timer-display" id="timerDisplay" aria-live="polite" aria-label="Timer display">25:00</div>
+                            <div class="timer-controls">
+                                <button class="timer-btn primary" onclick="startTimer()" id="startBtn" aria-label="Start timer">Start Focus</button>
+                                <button class="timer-btn secondary" onclick="pauseTimer()" id="pauseBtn" aria-label="Pause timer">Pause</button>
+                                <button class="timer-btn secondary" onclick="resetTimer()" id="resetBtn" aria-label="Reset timer">Reset</button>
+                            </div>
+                            <div class="timer-modes" role="group" aria-label="Timer presets">
+                                <button class="timer-mode active" onclick="setTimerMode('focus', 25)" aria-pressed="true">Focus (25min)</button>
+                                <button class="timer-mode" onclick="setTimerMode('short', 5)" aria-pressed="false">Short Break (5min)</button>
+                                <button class="timer-mode" onclick="setTimerMode('long', 15)" aria-pressed="false">Long Break (15min)</button>
+                            </div>
+                            <div class="timer-custom">
+                                <label for="customMinutes">Custom Timer:</label>
+                                <input type="number" class="timer-input" id="customMinutes" placeholder="25" min="1" max="120" aria-label="Custom timer minutes">
+                                <span>minutes</span>
+                                <button class="timer-btn secondary" onclick="setCustomTimer()" aria-label="Set custom timer">Set</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Project Kanban Board with Drag & Drop -->
+                    <section class="kanban-board slide-in" role="region" aria-labelledby="kanban-title">
+                        <h2 id="kanban-title" class="sr-only">Project Kanban Board</h2>
+                        <div class="kanban-column" data-column="planning">
+                            <div class="column-header">
+                                <div class="column-title">
+                                    📋 Planning
+                                    <span class="column-count" aria-label="3 items" id="planning-count">3</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="E-commerce Platform Redesign project" data-task-id="task-1">
+                                <div class="task-title">E-commerce Platform Redesign</div>
+                                <div class="task-description">Complete UI/UX overhaul with modern design system</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Due: Next Week</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="API Documentation Update project" data-task-id="task-2">
+                                <div class="task-title">API Documentation Update</div>
+                                <div class="task-description">Update REST API docs with new endpoints</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-medium">Medium</span>
+                                    <span>Due: Friday</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Mobile App Performance Audit project" data-task-id="task-3">
+                                <div class="task-title">Mobile App Performance Audit</div>
+                                <div class="task-description">Analyze and optimize React Native app performance</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-low">Low</span>
+                                    <span>Due: This month</span>
+                                </div>
+                            </div>
+                            <button class="add-task-btn" aria-label="Add new project to planning">+ Add Project</button>
+                        </div>
+                        
+                        <div class="kanban-column" data-column="development">
+                            <div class="column-header">
+                                <div class="column-title">
+                                    🔄 In Development
+                                    <span class="column-count" aria-label="2 items" id="development-count">2</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="React Component Library project" data-task-id="task-4">
+                                <div class="task-title">React Component Library</div>
+                                <div class="task-description">Building reusable UI components for the design system</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Started: Monday</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Database Migration Script project" data-task-id="task-5">
+                                <div class="task-title">Database Migration Script</div>
+                                <div class="task-description">Migrating legacy data to new PostgreSQL schema</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-medium">Medium</span>
+                                    <span>Started: Yesterday</span>
+                                </div>
+                            </div>
+                            <button class="add-task-btn" aria-label="Add new project to development">+ Add Project</button>
+                        </div>
+                        
+                        <div class="kanban-column" data-column="review">
+                            <div class="column-header">
+                                <div class="column-title">
+                                    🔍 Code Review
+                                    <span class="column-count" aria-label="2 items" id="review-count">2</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Authentication Service project" data-task-id="task-6">
+                                <div class="task-title">Authentication Service</div>
+                                <div class="task-description">JWT-based auth system awaiting security review</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Review: 1 day</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Payment Gateway Integration project" data-task-id="task-7">
+                                <div class="task-title">Payment Gateway Integration</div>
+                                <div class="task-description">Stripe integration ready for testing</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-medium">Medium</span>
+                                    <span>Review: 2 days</span>
+                                </div>
+                            </div>
+                            <button class="add-task-btn" aria-label="Add new project to code review">+ Add Project</button>
+                        </div>
+                        
+                        <div class="kanban-column" data-column="deployed">
+                            <div class="column-header">
+                                <div class="column-title">
+                                    ✅ Deployed
+                                    <span class="column-count" aria-label="4 items" id="deployed-count">4</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="User Dashboard v2.0 project" data-task-id="task-8">
+                                <div class="task-title">User Dashboard v2.0</div>
+                                <div class="task-description">New dashboard with improved analytics</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Deployed: Today</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Bug Fix: Login Issues project" data-task-id="task-9">
+                                <div class="task-title">Bug Fix: Login Issues</div>
+                                <div class="task-description">Fixed OAuth login redirect problems</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Deployed: Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Performance Optimization project" data-task-id="task-10">
+                                <div class="task-title">Performance Optimization</div>
+                                <div class="task-description">Reduced page load time by 40%</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-medium">Medium</span>
+                                    <span>Deployed: 2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="task-card" draggable="true" tabindex="0" role="button" aria-label="Security Patch project" data-task-id="task-11">
+                                <div class="task-title">Security Patch</div>
+                                <div class="task-description">Critical vulnerability fixes deployed</div>
+                                <div class="task-meta">
+                                    <span class="task-priority priority-high">High</span>
+                                    <span>Deployed: 3 days ago</span>
+                                </div>
+                            </div>
+                            <button class="add-task-btn" aria-label="Add new project to deployed">+ Add Project</button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Learning Mode -->
+                <div class="mode-content" id="learning-mode" role="tabpanel" aria-labelledby="learning-tab">
+                    <div class="learning-grid fade-in">
+                        <!-- YouTube Learning -->
+                        <section class="resource-category" aria-labelledby="youtube-learning-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">📺</div>
+                                <div>
+                                    <h3 class="category-title" id="youtube-learning-title">YouTube Learning</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Curated coding tutorials</p>
+                                </div>
+                            </div>
+                            <a href="https://www.youtube.com/playlist?list=PLZlA0Gpn_vH_NT5zPVp18nGe_W9LqBDQK" target="_blank" class="resource-item" aria-label="Advanced React Patterns playlist">
+                                <span class="resource-icon" aria-hidden="true">⚛️</span>
+                                <div class="resource-info">
+                                    <h4>Advanced React Patterns</h4>
+                                    <p>20 videos • 12 hours</p>
+                                </div>
+                            </a>
+                            <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu" target="_blank" class="resource-item" aria-label="Node.js Masterclass playlist">
+                                <span class="resource-icon" aria-hidden="true">🟢</span>
+                                <div class="resource-info">
+                                    <h4>Node.js Masterclass</h4>
+                                    <p>25 videos • 15 hours</p>
+                                </div>
+                            </a>
+                            <a href="https://www.youtube.com/playlist?list=PLu8EoSxDXHP7xj_y6NIAhy0wuCd4uVdid" target="_blank" class="resource-item" aria-label="CSS Grid & Flexbox playlist">
+                                <span class="resource-icon" aria-hidden="true">🎨</span>
+                                <div class="resource-info">
+                                    <h4>CSS Grid & Flexbox</h4>
+                                    <p>18 videos • 8 hours</p>
+                                </div>
+                            </a>
+                            <a href="https://www.youtube.com/playlist?list=PLQnljOFTspQUNtitFcbKrSL1GwLLNOoP2" target="_blank" class="resource-item" aria-label="TypeScript Deep Dive playlist">
+                                <span class="resource-icon" aria-hidden="true">🟦</span>
+                                <div class="resource-info">
+                                    <h4>TypeScript Deep Dive</h4>
+                                    <p>30 videos • 18 hours</p>
+                                </div>
+                            </a>
+                            <div class="add-resource" aria-label="Add new YouTube video">
+    <span class="add-icon" aria-hidden="true">➕</span>
+    <span>Add YouTube Video/Playlist</span>
+  </div>
+                        </section>
+
+                        <!-- Documentation -->
+                        <section class="resource-category" aria-labelledby="documentation-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">📚</div>
+                                <div>
+                                    <h3 class="category-title" id="documentation-title">Documentation</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Technical docs & references</p>
+                                </div>
+                            </div>
+                            <a href="https://react.dev" target="_blank" class="resource-item" aria-label="React 18 Documentation">
+                                <span class="resource-icon" aria-hidden="true">⚛️</span>
+                                <div class="resource-info">
+                                    <h4>React 18 Documentation</h4>
+                                    <p>Official React docs & new features</p>
+                                </div>
+                            </a>
+                            <a href="https://www.typescriptlang.org/docs/" target="_blank" class="resource-item" aria-label="TypeScript Handbook">
+                                <span class="resource-icon" aria-hidden="true">🟦</span>
+                                <div class="resource-info">
+                                    <h4>TypeScript Handbook</h4>
+                                    <p>Complete TypeScript reference</p>
+                                </div>
+                            </a>
+                            <a href="https://nextjs.org/docs" target="_blank" class="resource-item" aria-label="Next.js Documentation">
+                                <span class="resource-icon" aria-hidden="true">🚀</span>
+                                <div class="resource-info">
+                                    <h4>Next.js Documentation</h4>
+                                    <p>Full-stack React framework guide</p>
+                                </div>
+                            </a>
+                            <a href="https://tailwindcss.com/docs" target="_blank" class="resource-item" aria-label="Tailwind CSS Documentation">
+                                <span class="resource-icon" aria-hidden="true">🎨</span>
+                                <div class="resource-info">
+                                    <h4>Tailwind CSS Docs</h4>
+                                    <p>Utility-first CSS framework</p>
+                                </div>
+                            </a>
+                            <div class="add-resource" aria-label="Add new documentation">
+    <span class="add-icon" aria-hidden="true">➕</span>
+    <span>Add Documentation</span>
+  </div>
+                        </section>
+
+                        <!-- Dev Articles & Blogs -->
+                        <section class="resource-category" aria-labelledby="dev-articles-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">📰</div>
+                                <div>
+                                    <h3 class="category-title" id="dev-articles-title">Dev Articles & Blogs</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Latest tech insights</p>
+                                </div>
+                            </div>
+                            <a href="https://javascriptweekly.com" target="_blank" class="resource-item" aria-label="JavaScript Weekly newsletter">
+                                <span class="resource-icon" aria-hidden="true">🔥</span>
+                                <div class="resource-info">
+                                    <h4>JavaScript Weekly</h4>
+                                    <p>Latest JS trends & best practices</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/donnemartin/system-design-primer" target="_blank" class="resource-item" aria-label="System Design Primer">
+                                <span class="resource-icon" aria-hidden="true">🏗️</span>
+                                <div class="resource-info">
+                                    <h4>System Design Primer</h4>
+                                    <p>Scalable architecture patterns</p>
+                                </div>
+                            </a>
+                            <a href="https://web.dev" target="_blank" class="resource-item" aria-label="Web.dev articles">
+                                <span class="resource-icon" aria-hidden="true">🎯</span>
+                                <div class="resource-info">
+                                    <h4>Web.dev Performance</h4>
+                                    <p>Web optimization techniques</p>
+                                </div>
+                            </a>
+                            <a href="https://css-tricks.com" target="_blank" class="resource-item" aria-label="CSS-Tricks articles">
+                                <span class="resource-icon" aria-hidden="true">🎨</span>
+                                <div class="resource-info">
+                                    <h4>CSS-Tricks</h4>
+                                    <p>Frontend tips & techniques</p>
+                                </div>
+                            </a>
+                            <div class="add-resource" aria-label="Add new article or blog">
+    <span class="add-icon" aria-hidden="true">➕</span>
+    <span>Add Article/Blog</span>
+  </div>
+                        </section>
+
+                        <!-- GitHub Repositories -->
+                        <section class="resource-category" aria-labelledby="github-repos-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">💻</div>
+                                <div>
+                                    <h3 class="category-title" id="github-repos-title">GitHub Repositories</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Code references & projects</p>
+                                </div>
+                            </div>
+                            <a href="https://github.com/facebook/create-react-app" target="_blank" class="resource-item" aria-label="Create React App repository">
+                                <span class="resource-icon" aria-hidden="true">🚀</span>
+                                <div class="resource-info">
+                                    <h4>Create React App</h4>
+                                    <p>Official React starter template</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/chakra-ui/chakra-ui" target="_blank" class="resource-item" aria-label="Chakra UI repository">
+                                <span class="resource-icon" aria-hidden="true">🎨</span>
+                                <div class="resource-info">
+                                    <h4>Chakra UI</h4>
+                                    <p>Modular React component library</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/30-seconds/30-seconds-of-code" target="_blank" class="resource-item" aria-label="30 Seconds of Code repository">
+                                <span class="resource-icon" aria-hidden="true">🔧</span>
+                                <div class="resource-info">
+                                    <h4>30 Seconds of Code</h4>
+                                    <p>Useful JavaScript snippets</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/d3/d3" target="_blank" class="resource-item" aria-label="D3.js repository">
+                                <span class="resource-icon" aria-hidden="true">📊</span>
+                                <div class="resource-info">
+                                    <h4>D3.js</h4>
+                                    <p>Data visualization library</p>
+                                </div>
+                            </a>
+                            <div class="add-resource" aria-label="Add new GitHub repository">
+    <span class="add-icon" aria-hidden="true">➕</span>
+    <span>Add Repository</span>
+  </div>
+                        </section>
+
+                        <!-- Coding Platforms -->
+                        <section class="resource-category" aria-labelledby="coding-platforms-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">🏆</div>
+                                <div>
+                                    <h3 class="category-title" id="coding-platforms-title">Coding Platforms</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Practice & challenges</p>
+                                </div>
+                            </div>
+                            <a href="https://leetcode.com" target="_blank" class="resource-item" aria-label="LeetCode platform">
+                                <span class="resource-icon" aria-hidden="true">🧩</span>
+                                <div class="resource-info">
+                                    <h4>LeetCode</h4>
+                                    <p>Algorithm & data structure practice</p>
+                                </div>
+                            </a>
+                            <a href="https://codepen.io" target="_blank" class="resource-item" aria-label="CodePen platform">
+                                <span class="resource-icon" aria-hidden="true">🎨</span>
+                                <div class="resource-info">
+                                    <h4>CodePen</h4>
+                                    <p>Frontend code playground</p>
+                                </div>
+                            </a>
+                            <a href="https://hackerrank.com" target="_blank" class="resource-item" aria-label="HackerRank platform">
+                                <span class="resource-icon" aria-hidden="true">💻</span>
+                                <div class="resource-info">
+                                    <h4>HackerRank</h4>
+                                    <p>Coding challenges & competitions</p>
+                                </div>
+                            </a>
+                            <a href="https://freecodecamp.org" target="_blank" class="resource-item" aria-label="freeCodeCamp platform">
+                                <span class="resource-icon" aria-hidden="true">🎓</span>
+                                <div class="resource-info">
+                                    <h4>freeCodeCamp</h4>
+                                    <p>Free coding bootcamp</p>
+                                </div>
+                            </a>
+                        </section>
+
+                        <!-- Developer Tools -->
+                        <section class="resource-category" aria-labelledby="dev-tools-title">
+                            <div class="category-header">
+                                <div class="category-icon" aria-hidden="true">🛠️</div>
+                                <div>
+                                    <h3 class="category-title" id="dev-tools-title">Developer Tools</h3>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Essential dev utilities</p>
+                                </div>
+                            </div>
+                            <a href="https://developer.chrome.com/docs/devtools/" target="_blank" class="resource-item" aria-label="Chrome DevTools documentation">
+                                <span class="resource-icon" aria-hidden="true">🔍</span>
+                                <div class="resource-info">
+                                    <h4>Chrome DevTools</h4>
+                                    <p>Browser debugging & profiling</p>
+                                </div>
+                            </a>
+                            <a href="https://www.postman.com" target="_blank" class="resource-item" aria-label="Postman API tool">
+                                <span class="resource-icon" aria-hidden="true">📡</span>
+                                <div class="resource-info">
+                                    <h4>Postman</h4>
+                                    <p>API development & testing</p>
+                                </div>
+                            </a>
+                            <a href="https://eslint.org" target="_blank" class="resource-item" aria-label="ESLint documentation">
+                                <span class="resource-icon" aria-hidden="true">✅</span>
+                                <div class="resource-info">
+                                    <h4>ESLint</h4>
+                                    <p>JavaScript linting & code quality</p>
+                                </div>
+                            </a>
+                            <a href="https://prettier.io" target="_blank" class="resource-item" aria-label="Prettier documentation">
+                                <span class="resource-icon" aria-hidden="true">💅</span>
+                                <div class="resource-info">
+                                    <h4>Prettier</h4>
+                                    <p>Code formatting & style</p>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Play Mode -->
+                <div class="mode-content" id="play-mode" role="tabpanel" aria-labelledby="play-tab">
+                    <div class="play-sections fade-in">
+                        <!-- Social Media Section -->
+                        <section class="play-section" aria-labelledby="social-media-title">
+                            <div class="section-header">
+                                <div class="section-icon" aria-hidden="true">📱</div>
+                                <h3 class="section-title" id="social-media-title">Social Media</h3>
+                            </div>
+                            <div class="play-grid">
+  <!-- X Widget -->
+  <div class="play-widget twitter" style="text-align:center; padding:1rem;">
+    <div class="play-icon" aria-hidden="true"
+         style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#000;">
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.185 0L0 3.185 5.817 9 0 14.815 3.185 18 9 12.183 14.815 18 18 14.815 12.183 9 18 3.185 14.815 0 9 5.817z"/>
+      </svg>
+    </div>
+    <h4 class="play-title">X</h4>
+    <p class="play-description">Connect with the dev community</p>
+    <a href="https://x.com" target="_blank" class="play-btn" aria-label="Open X"
+       style="display:inline-block; margin-top:0.5rem; padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; background:var(--accent); color:#fff; text-decoration:none; font-size:0.9rem;">
+      Open X
+    </a>
+  </div>
+
+  <!-- LinkedIn Widget -->
+  <div class="play-widget linkedin" style="text-align:center; padding:1rem;">
+    <div class="play-icon" aria-hidden="true"
+         style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#0A66C2;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.98 3.5c0 1.381-1.116 2.5-2.49 2.5A2.494 2.494 0 0 1 0 3.5C0 2.119 1.116 1 2.49 1s2.49 1.119 2.49 2.5zM.5 8.5h4.99v15H.5v-15zM8.5 8.5h4.78v2.064h.07c.667-1.263 2.298-2.594 4.734-2.594 5.06 0 6 3.33 6 7.656v8.874h-5v-7.872c0-1.876-.035-4.29-2.612-4.29-2.617 0-3.017 2.044-3.017 4.155v8.007h-5v-15z"/>
+      </svg>
+    </div>
+    <h4 class="play-title">LinkedIn</h4>
+    <p class="play-description">Professional networking</p>
+    <a href="https://linkedin.com" target="_blank" class="play-btn" aria-label="Open LinkedIn"
+       style="display:inline-block; margin-top:0.5rem; padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; background:var(--accent); color:#fff; text-decoration:none; font-size:0.9rem;">
+      Open LinkedIn
+    </a>
+  </div>
+
+  <!-- Discord Widget -->
+  <div class="play-widget discord" style="text-align:center; padding:1rem;">
+    <div class="play-icon" aria-hidden="true"
+         style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#5865F2;">
+      <svg width="24" height="24" viewBox="0 0 71 55" fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M60.104 4.552a58.44 58.44 0 00-13.928-4.27.207.207 0 00-.218.104c-.598 1.04-1.268 2.398-1.738 3.47-5.155-.774-10.26-.774-15.328 0-.47-1.072-1.14-2.43-1.739-3.47a.204.204 0 00-.218-.104A58.753 58.753 0 0010.9 4.552a.193.193 0 00-.094.076C.753 19.068-.3 33.075.158 46.99a.224.224 0 00.084.17c3.736 2.773 7.49 4.522 11.249 5.678a.225.225 0 00.246-.084c.868-1.196 1.636-2.453 2.271-3.75a.232.232 0 00-.13-.316c-1.03-.39-2.01-.83-2.946-1.33a.227.227 0 01-.02-.383c.198-.148.396-.3.588-.457a.226.226 0 01.24-.035c19.247 8.77 40.005 8.77 59.24 0a.226.226 0 01.24.035c.192.157.39.309.588.457a.227.227 0 01-.02.383 49.237 49.237 0 01-2.946 1.33.232.232 0 00-.13.316c.635 1.297 1.403 2.554 2.271 3.75a.225.225 0 00.246.084c3.76-1.156 7.513-2.905 11.25-5.678a.224.224 0 00.083-.17c.5-14-1.048-28.013-10.708-42.362a.193.193 0 00-.093-.076zM23.725 37.984c-4.045 0-7.355-3.72-7.355-8.3 0-4.58 3.28-8.3 7.355-8.3 4.072 0 7.37 3.72 7.355 8.3 0 4.58-3.283 8.3-7.355 8.3zm23.544 0c-4.045 0-7.355-3.72-7.355-8.3 0-4.58 3.28-8.3 7.355-8.3 4.072 0 7.37 3.72 7.355 8.3 0 4.58-3.283 8.3-7.355 8.3z"/>
+      </svg>
+    </div>
+    <h4 class="play-title">Discord</h4>
+    <p class="play-description">Join dev communities</p>
+    <a href="https://discord.com" target="_blank" class="play-btn" aria-label="Open Discord"
+       style="display:inline-block; margin-top:0.5rem; padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; background:var(--accent); color:#fff; text-decoration:none; font-size:0.9rem;">
+      Open Discord
+    </a>
+  </div>
+</div>
+                        </section>
+
+                        <!-- Workout Section -->
+                        <section class="play-section" aria-labelledby="workout-title">
+                            <div class="section-header">
+                                <div class="section-icon" aria-hidden="true">💪</div>
+                                <h3 class="section-title" id="workout-title">Workout Routines</h3>
+                            </div>
+                            <div class="workout-tracker">
+                                <div class="workout-stats">
+                                    <div class="workout-stat">
+                                        <div class="workout-stat-number" id="todayWorkouts" aria-live="polite">0</div>
+                                        <div class="workout-stat-label">Today</div>
+                                    </div>
+                                    <div class="workout-stat">
+                                        <div class="workout-stat-number" id="weekWorkouts" aria-live="polite">0</div>
+                                        <div class="workout-stat-label">This Week</div>
+                                    </div>
+                                    <div class="workout-stat">
+                                        <div class="workout-stat-number" id="totalWorkouts" aria-live="polite">0</div>
+                                        <div class="workout-stat-label">Total</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="play-grid">
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🏃‍♀️</div>
+                                    <h4 class="play-title">Quick Desk Workout</h4>
+                                    <p class="play-description">5-minute energizing exercises</p>
+                                    <button class="play-btn" onclick="startWorkout('desk')" aria-label="Start desk workout">Start Workout</button>
+                                    <div class="workout-routine" id="deskWorkout" style="display: none;" role="region" aria-labelledby="desk-workout-title">
+                                        <h5 id="desk-workout-title" class="sr-only">Desk Workout Routine</h5>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Neck Rolls</span>
+                                            <span class="exercise-duration">30s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Shoulder Shrugs</span>
+                                            <span class="exercise-duration">30s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Seated Spinal Twist</span>
+                                            <span class="exercise-duration">45s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Desk Push-ups</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Calf Raises</span>
+                                            <span class="exercise-duration">45s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Deep Breathing</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <button class="workout-complete-btn" onclick="completeWorkout('desk')" aria-label="Mark desk workout as complete">Mark Complete</button>
+                                    </div>
+                                </div>
+
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🔥</div>
+                                    <h4 class="play-title">HIIT Workout</h4>
+                                    <p class="play-description">10-minute high-intensity routine</p>
+                                    <button class="play-btn" onclick="startWorkout('hiit')" aria-label="Start HIIT workout">Start HIIT</button>
+                                    <div class="workout-routine" id="hiitWorkout" style="display: none;" role="region" aria-labelledby="hiit-workout-title">
+                                        <h5 id="hiit-workout-title" class="sr-only">HIIT Workout Routine</h5>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Jumping Jacks</span>
+                                            <span class="exercise-duration">45s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">High Knees</span>
+                                            <span class="exercise-duration">45s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Burpees</span>
+                                            <span class="exercise-duration">30s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Mountain Climbers</span>
+                                            <span class="exercise-duration">45s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Squat Jumps</span>
+                                            <span class="exercise-duration">30s</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Rest & Stretch</span>
+                                            <span class="exercise-duration">2min</span>
+                                        </div>
+                                        <button class="workout-complete-btn" onclick="completeWorkout('hiit')" aria-label="Mark HIIT workout as complete">Mark Complete</button>
+                                    </div>
+                                </div>
+
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">⚡</div>
+                                    <h4 class="play-title">Tabata Training</h4>
+                                    <p class="play-description">4-minute intense intervals</p>
+                                    <button class="play-btn" onclick="startWorkout('tabata')" aria-label="Start Tabata workout">Start Tabata</button>
+                                    <div class="workout-routine" id="tabataWorkout" style="display: none;" role="region" aria-labelledby="tabata-workout-title">
+                                        <h5 id="tabata-workout-title" class="sr-only">Tabata Workout Routine</h5>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Push-ups (20s on, 10s rest)</span>
+                                            <span class="exercise-duration">4 rounds</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Squats (20s on, 10s rest)</span>
+                                            <span class="exercise-duration">4 rounds</span>
+                                        </div>
+                                        <button class="workout-complete-btn" onclick="completeWorkout('tabata')" aria-label="Mark Tabata workout as complete">Mark Complete</button>
+                                    </div>
+                                </div>
+
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">❤️</div>
+                                    <h4 class="play-title">Short Cardio</h4>
+                                    <p class="play-description">8-minute heart pumping session</p>
+                                    <button class="play-btn" onclick="startWorkout('cardio')" aria-label="Start cardio workout">Start Cardio</button>
+                                    <div class="workout-routine" id="cardioWorkout" style="display: none;" role="region" aria-labelledby="cardio-workout-title">
+                                        <h5 id="cardio-workout-title" class="sr-only">Cardio Workout Routine</h5>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Warm-up Marching</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Jumping Jacks</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">High Knees</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Butt Kicks</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Side Steps</span>
+                                            <span class="exercise-duration">1min</span>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <span class="exercise-name">Cool Down Stretch</span>
+                                            <span class="exercise-duration">3min</span>
+                                        </div>
+                                        <button class="workout-complete-btn" onclick="completeWorkout('cardio')" aria-label="Mark cardio workout as complete">Mark Complete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Online Games Section -->
+                        <section class="play-section" aria-labelledby="online-games-title">
+                            <div class="section-header">
+                                <div class="section-icon" aria-hidden="true">🎮</div>
+                                <h3 class="section-title" id="online-games-title">Online Games</h3>
+                            </div>
+                            <div class="play-grid">
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🧩</div>
+                                    <h4 class="play-title">Sudoku</h4>
+                                    <p class="play-description">Classic number puzzle game</p>
+                                    <a href="https://sudoku.com" target="_blank" class="play-btn" aria-label="Play Sudoku online">Play Sudoku</a>
+                                </div>
+                                
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🐍</div>
+                                    <h4 class="play-title">Snake Game</h4>
+                                    <p class="play-description">Classic arcade snake game</p>
+                                    <a href="https://www.google.com/search?q=snake+game" target="_blank" class="play-btn" aria-label="Play Snake game">Play Snake</a>
+                                </div>
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🎲</div>
+                                    <h4 class="play-title">Wordle</h4>
+                                    <p class="play-description">Daily word guessing challenge</p>
+                                    <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" class="play-btn" aria-label="Play Wordle">Play Wordle</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Music Section -->
+                        <section class="play-section" aria-labelledby="music-title">
+                            <div class="section-header">
+                                <div class="section-icon" aria-hidden="true">🎵</div>
+                                <h3 class="section-title" id="music-title">Music & Focus Sounds</h3>
+                            </div>
+                            <div class="play-grid">
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🎧</div>
+                                    <h4 class="play-title">Spotify</h4>
+                                    <p class="play-description">Your favorite coding playlists</p>
+                                    <a href="https://open.spotify.com" target="_blank" class="play-btn" aria-label="Open Spotify">Open Spotify</a>
+                                </div>
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🌧️</div>
+                                    <h4 class="play-title">Rain Sounds</h4>
+                                    <p class="play-description">Relaxing background ambience</p>
+                                    <a href="https://rainymood.com" target="_blank" class="play-btn" aria-label="Play rain sounds">Play Rain</a>
+                                </div>
+                                <div class="play-widget">
+                                    <div class="play-icon" aria-hidden="true">🎼</div>
+                                    <h4 class="play-title">Brain.fm</h4>
+                                    <p class="play-description">Music designed for focus</p>
+                                    <a href="https://brain.fm" target="_blank" class="play-btn" aria-label="Open Brain.fm">Try Brain.fm</a>
+                                </div>
+                                
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer - Full Width -->
+    <footer class="footer" role="contentinfo">
+        <p>Built by <a href="https://x.com/singh_divy44952">Divya</a> for the <a href="https://dev.to/challenges/frontend/axero">Frontend Challenge: Office Edition</a> ✨</p>
+    </footer>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
