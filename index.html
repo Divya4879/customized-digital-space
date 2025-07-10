@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divya's Ultimate Digital Workspace | DevFlow Pro</title>
+    <title>Divya's Ultimate Digital Intranet Workspace | AetherDesk</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="pink" data-mode="light">
-    <!-- Notification Container -->
     <div class="notification-container" id="notificationContainer"></div>
 
     <div class="container">
-        <!-- Sidebar -->
         <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
             
             <ul class="nav-menu" role="menubar">
@@ -61,9 +59,7 @@
             </ul>
         </nav>
 
-        <!-- Main Content -->
         <main class="main-content" role="main">
-            <!-- Header -->
             <header class="header" role="banner">
                 <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation menu">☰</button>
                 
@@ -105,7 +101,6 @@
                 </div>
             </header>
 
-            <!-- Mode Tabs -->
             <div class="mode-tabs" role="tablist" aria-label="Workspace modes">
                 <button class="mode-tab active" onclick="switchMode('dashboard')" role="tab" aria-selected="true" aria-controls="dashboard-mode" id="dashboard-tab">
                     🏠 Dashboard
@@ -121,11 +116,9 @@
                 </button>
             </div>
 
-            <!-- Dashboard Content -->
             <div class="dashboard">
-                <!-- Original Dashboard -->
                 <div class="mode-content active" id="dashboard-mode" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <!-- Welcome Section -->
+
                     <section class="welcome-section fade-in" aria-labelledby="welcome-title">
                         <div class="welcome-content">
                             <h1 class="welcome-title" id="welcome-title">Good morning, Divya! ✨</h1>
@@ -134,9 +127,8 @@
                         </div>
                     </section>
 
-                    <!-- Widget Grid -->
                     <div class="widget-grid">
-                        <!-- Quick Actions Widget -->
+
                         <section class="widget slide-in" aria-labelledby="quick-actions-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="quick-actions-title">
@@ -164,7 +156,6 @@
                             </div>
                         </section>
 
-                        <!-- Enhanced Messages Widget -->
                         <section class="widget slide-in" aria-labelledby="messages-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="messages-title">
@@ -417,7 +408,6 @@
                             </div>
                         </section>
 
-                        <!-- Most Productive Employee Widget -->
                         <section class="widget slide-in" aria-labelledby="productive-employee-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="productive-employee-title">
@@ -435,7 +425,6 @@
                             </div>
                         </section>
 
-                        <!-- Welcome New Hires Widget -->
                         <section class="widget slide-in" aria-labelledby="new-hires-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="new-hires-title">
@@ -462,7 +451,6 @@
                             </div>
                         </section>
 
-                        <!-- Team Spotlight Widget -->
                         <section class="widget slide-in" aria-labelledby="team-spotlight-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="team-spotlight-title">
@@ -493,7 +481,6 @@
                             </div>
                         </section>
 
-                        <!-- Upcoming Events Widget -->
                         <section class="widget slide-in" aria-labelledby="upcoming-events-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="upcoming-events-title">
@@ -533,7 +520,6 @@
                             </div>
                         </section>
 
-                        <!-- Dev Announcements Widget -->
                         <section class="widget slide-in" aria-labelledby="dev-announcements-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="dev-announcements-title">
@@ -557,7 +543,6 @@
                             </div>
                         </section>
 
-                        <!-- Weather Widget -->
                         <section class="widget slide-in" aria-labelledby="weather-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="weather-title">
@@ -586,7 +571,6 @@
                             </div>
                         </section>
 
-                        <!-- Recent Projects Widget -->
                         <section class="widget slide-in" aria-labelledby="recent-projects-title">
                             <div class="widget-header">
                                 <h2 class="widget-title" id="recent-projects-title">
@@ -620,7 +604,6 @@
                         </section>
                     </div>
 
-                    <!-- Development Stats -->
                     <section class="widget fade-in" style="margin-bottom: 2rem;" aria-labelledby="dev-metrics-title">
                         <div class="widget-header">
                             <h2 class="widget-title" id="dev-metrics-title">
@@ -651,7 +634,7 @@
 
                 <!-- Focus Mode -->
                 <div class="mode-content" id="focus-mode" role="tabpanel" aria-labelledby="focus-tab">
-                    <!-- Stats Overview -->
+                   
                     <div class="stats-grid fade-in" style="margin-bottom: 2rem;">
                         <div class="stat-card">
                             <div class="stat-header">
@@ -708,7 +691,7 @@
                         </div>
                     </div>
 
-                    <!-- Launch Pad -->
+                    
                     <section class="launch-pad slide-in" aria-labelledby="launch-pad-title">
                         <div class="launch-pad-header">
                             <h2 class="launch-pad-title" id="launch-pad-title">Developer Launch Pad</h2>
@@ -758,14 +741,14 @@
                         </div>
                     </section>
 
-                    <!-- Focus Section -->
+                    
                     <section class="focus-section slide-in" aria-labelledby="focus-question">
                         <div class="focus-header">
                             <h2 class="focus-question" id="focus-question">What's your primary focus today, Divya?</h2>
                             <input type="text" class="focus-input" placeholder="Enter your most important coding task for today..." id="focusInput" aria-label="Daily focus task">
                         </div>
                         
-                        <!-- Pomodoro Timer -->
+                        
                         <div class="pomodoro-timer" role="region" aria-labelledby="timer-title">
                             <h3 id="timer-title" class="sr-only">Pomodoro Timer</h3>
                             <div class="timer-display" id="timerDisplay" aria-live="polite" aria-label="Timer display">25:00</div>
@@ -788,7 +771,7 @@
                         </div>
                     </section>
 
-                    <!-- Project Kanban Board with Drag & Drop -->
+                    
                     <section class="kanban-board slide-in" role="region" aria-labelledby="kanban-title">
                         <h2 id="kanban-title" class="sr-only">Project Kanban Board</h2>
                         <div class="kanban-column" data-column="planning">
@@ -924,7 +907,7 @@
                 <!-- Learning Mode -->
                 <div class="mode-content" id="learning-mode" role="tabpanel" aria-labelledby="learning-tab">
                     <div class="learning-grid fade-in">
-                        <!-- YouTube Learning -->
+                        
                         <section class="resource-category" aria-labelledby="youtube-learning-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">📺</div>
@@ -967,7 +950,7 @@
   </div>
                         </section>
 
-                        <!-- Documentation -->
+
                         <section class="resource-category" aria-labelledby="documentation-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">📚</div>
@@ -1010,7 +993,7 @@
   </div>
                         </section>
 
-                        <!-- Dev Articles & Blogs -->
+                        
                         <section class="resource-category" aria-labelledby="dev-articles-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">📰</div>
@@ -1053,7 +1036,7 @@
   </div>
                         </section>
 
-                        <!-- GitHub Repositories -->
+                        
                         <section class="resource-category" aria-labelledby="github-repos-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">💻</div>
@@ -1096,7 +1079,7 @@
   </div>
                         </section>
 
-                        <!-- Coding Platforms -->
+                        
                         <section class="resource-category" aria-labelledby="coding-platforms-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">🏆</div>
@@ -1135,7 +1118,7 @@
                             </a>
                         </section>
 
-                        <!-- Developer Tools -->
+                        
                         <section class="resource-category" aria-labelledby="dev-tools-title">
                             <div class="category-header">
                                 <div class="category-icon" aria-hidden="true">🛠️</div>
@@ -1179,14 +1162,14 @@
                 <!-- Play Mode -->
                 <div class="mode-content" id="play-mode" role="tabpanel" aria-labelledby="play-tab">
                     <div class="play-sections fade-in">
-                        <!-- Social Media Section -->
+                        
                         <section class="play-section" aria-labelledby="social-media-title">
                             <div class="section-header">
                                 <div class="section-icon" aria-hidden="true">📱</div>
                                 <h3 class="section-title" id="social-media-title">Social Media</h3>
                             </div>
                             <div class="play-grid">
-  <!-- X Widget -->
+  
   <div class="play-widget twitter" style="text-align:center; padding:1rem;">
     <div class="play-icon" aria-hidden="true"
          style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#000;">
@@ -1203,7 +1186,7 @@
     </a>
   </div>
 
-  <!-- LinkedIn Widget -->
+  
   <div class="play-widget linkedin" style="text-align:center; padding:1rem;">
     <div class="play-icon" aria-hidden="true"
          style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#0A66C2;">
@@ -1220,7 +1203,7 @@
     </a>
   </div>
 
-  <!-- Discord Widget -->
+  
   <div class="play-widget discord" style="text-align:center; padding:1rem;">
     <div class="play-icon" aria-hidden="true"
          style="width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; margin-bottom:0.5rem; background-color:#5865F2;">
@@ -1239,7 +1222,7 @@
 </div>
                         </section>
 
-                        <!-- Workout Section -->
+                        
                         <section class="play-section" aria-labelledby="workout-title">
                             <div class="section-header">
                                 <div class="section-icon" aria-hidden="true">💪</div>
@@ -1388,7 +1371,7 @@
                             </div>
                         </section>
 
-                        <!-- Online Games Section -->
+                        
                         <section class="play-section" aria-labelledby="online-games-title">
                             <div class="section-header">
                                 <div class="section-icon" aria-hidden="true">🎮</div>
@@ -1417,7 +1400,7 @@
                             </div>
                         </section>
 
-                        <!-- Music Section -->
+                        
                         <section class="play-section" aria-labelledby="music-title">
                             <div class="section-header">
                                 <div class="section-icon" aria-hidden="true">🎵</div>
@@ -1451,7 +1434,7 @@
         </main>
     </div>
 
-    <!-- Footer - Full Width -->
+    
     <footer class="footer" role="contentinfo">
         <p>Built by <a href="https://x.com/singh_divy44952">Divya</a> for the <a href="https://dev.to/challenges/frontend/axero">Frontend Challenge: Office Edition</a> ✨</p>
     </footer>
