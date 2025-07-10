@@ -323,14 +323,15 @@ copies or substantial portions of the Software.
 ## 🙏 Acknowledgments
 
 ### **Inspiration & Resources**
-- **Design Inspiration**: Modern dashboard designs and developer tools
-- **Color Palettes**: Material Design and modern UI trends
-- **Accessibility Guidelines**: WCAG 2.1 and inclusive design principles
-- **Performance Best Practices**: Web.dev and MDN documentation
 
-### **Special Thanks**
-- **Open Source Community** for continuous inspiration
-- **Accessibility Advocates** for making the web inclusive
+- 🧭 **Axero Intranet** – The core inspiration behind the Dashboard layout and feature set  
+- 🖥️ **Modern Developer Dashboards** – UI/UX ideas from tools like Linear, Notion, and Vercel  
+- 🎨 **Color Palettes** – Influenced by Material Design, Tailwind UI tones, and Dribbble shots  
+- ♿ **Accessibility Guidelines** – Referenced WCAG 2.1 and inclusive design best practices  
+- ⚙️ **Performance Tips** – Insights from [Web.dev](https://web.dev/) and [MDN Web Docs](https://developer.mozilla.org/)  
+- 📋 **Real Dev Routines** – Built to reflect my own dev day: focus sessions, learning breaks, and wellness  
+
+This project was made possible by countless community tools, best practices, and personal daily habits that shaped every line of code and pixel of design.
 
 ---
 
@@ -338,9 +339,9 @@ copies or substantial portions of the Software.
 
 **Made with ❤️ by developer, for developers**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/devflow-pro?style=social)](https://github.com/yourusername/devflow-pro/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/devflow-pro?style=social)](https://github.com/yourusername/devflow-pro/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/yourusername/devflow-pro?style=social)](https://github.com/yourusername/devflow-pro/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/Divya4879/customized-digital-space?style=social)](https://github.com/Divya4879/customized-digital-space/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Divya4879/customized-digital-space?style=social)](https://github.com/Divya4879/customized-digital-space/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/Divya4879/customized-digital-space?style=social)](https://github.com/Divya4879/customized-digital-space/watchers)
 
 [⬆ Back to Top](#-devflow-pro---ultimate-developer-workspace)
 
