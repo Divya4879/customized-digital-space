@@ -1,17 +1,22 @@
-# 🚀 DevFlow Pro - Ultimate Developer Workspace
+# 📊🎯📚 AetherDesk - Personalized All-In-One Digital Intranet Workspace
+
+![project-dashboard](https://github.com/user-attachments/assets/3974ca2a-95c0-4537-9861-e1a7398a470c)
 
 <div align="center">
 
-![DevFlow Pro Banner](https://img.shields.io/badge/DevFlow-Pro-ff4081?style=for-the-badge&logo=react&logoColor=white)
+<h3><strong>A beautiful, feature-rich developer workspace dashboard built with vanilla HTML, CSS, and JS</strong></h3>
 
-**A beautiful, responsive, and feature-rich developer workspace dashboard built with vanilla HTML, CSS, and JavaScript**
+<p>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+  <a href="https://www.w3.org/WAI/WCAG21/quickref/">
+    <img src="https://img.shields.io/badge/Accessibility-WCAG%202.1-blue.svg" alt="Accessibility: WCAG 2.1">
+  </a>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Responsive](https://img.shields.io/badge/Responsive-Yes-green.svg)](https://github.com/yourusername/devflow-pro)
-[![Accessibility](https://img.shields.io/badge/Accessibility-WCAG%202.1-blue.svg)](https://www.w3.org/WAI/WCAG21/quickref/)
-[![PWA Ready](https://img.shields.io/badge/PWA-Ready-purple.svg)](https://web.dev/progressive-web-apps/)
+[🌟 **Live Demo**](https://aetherdesk.netlify.app) • [🐛 **Report Bug**](https://github.com/Divya4879/customized-digital-space/issues) • [💡 **Request Feature**](https://github.com/Divya4879/customized-digital-space/issues)
 
-[🌟 Live Demo](https://your-demo-link.com) • [📖 Documentation](https://your-docs-link.com) • [🐛 Report Bug](https://github.com/yourusername/devflow-pro/issues) • [💡 Request Feature](https://github.com/yourusername/devflow-pro/issues)
 
 </div>
 
